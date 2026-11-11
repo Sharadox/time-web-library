@@ -1,0 +1,9 @@
+# @sharadox/time-web-library
+
+> Time-zone-correct time helpers for local business sites.
+
+- /zone-minute minutesInZone(date, zone); /format-time formatTime(date, zone) → "HH:MM"
+- /open-state openState(now, [h,m], [h,m], zone) → "before"|"open"|"after"
+- /round-down roundDown(date, stepMinutes, beforeMinutes=0) → Date
+- /sun-time sunTimes(date, lat, lng) → { rise, set }; /sun-today useSunToday(lat, lng) → { rise, set, now, tomorrow } | null ("use client")
+- Peer: react (for the hook). Licence: Sharadox Open Source Licence 0.1.0
