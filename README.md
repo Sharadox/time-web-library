@@ -8,6 +8,8 @@ Time for local businesses' websites, always in the place's own time zone, whatev
 - **`roundDown(date, step, before?)`:** suggested times, for example 45 minutes before sunset on the quarter hour.
 - **`sunTimes(date, latitude, longitude)`:** sunrise and sunset (NOAA approximation, ±1–2 minutes).
 - **`useSunToday(latitude, longitude)`:** today's sun, or tomorrow's once it has set, refreshed every minute.
+- **`openingStatus(now, hours)`:** whether a place is open, from its weekly hours (with breaks) and closures (holidays), and when that next changes. `nextClosure` and `reopening` announce a closure ahead.
+- **`<CopyrightYears since={1996} />`:** "1996–2026", or just "2026" in the first year; the current year moves on by itself.
 
 ## Install
 
@@ -17,14 +19,16 @@ pnpm add @sharadox/time-web-library
 
 ## API
 
-| Import          | Export                                                                                        |
-| --------------- | --------------------------------------------------------------------------------------------- |
-| `…/zone-minute` | `minutesInZone(date, timeZone)`                                                               |
-| `…/format-time` | `formatTime(date, timeZone)`                                                                  |
-| `…/open-state`  | `openState(now, from, to, timeZone)`; `OpenState` and `TimeOfDay` in `…/open-state/type`      |
-| `…/round-down`  | `roundDown(date, step, before = 0)`                                                           |
-| `…/sun-time`    | `sunTimes(date, latitude, longitude)` → `{ rise, set }`                                       |
-| `…/sun-today`   | `useSunToday(latitude, longitude)` → `{ rise, set, now, tomorrow }` or `null` before mounting |
+| Import              | Export                                                                                                                                                                                                                    |
+| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `…/zone-minute`     | `minutesInZone(date, timeZone)`                                                                                                                                                                                           |
+| `…/format-time`     | `formatTime(date, timeZone)`                                                                                                                                                                                              |
+| `…/open-state`      | `openState(now, from, to, timeZone)`; `OpenState` and `TimeOfDay` in `…/open-state/type`                                                                                                                                  |
+| `…/round-down`      | `roundDown(date, step, before = 0)`                                                                                                                                                                                       |
+| `…/sun-time`        | `sunTimes(date, latitude, longitude)` → `{ rise, set }`                                                                                                                                                                   |
+| `…/sun-today`       | `useSunToday(latitude, longitude)` → `{ rise, set, now, tomorrow }` or `null` before mounting                                                                                                                             |
+| `…/opening-status`  | `openingStatus(now, hours)` → `{ open, closure?, change: { day, time, inDays, date } }`; `nextClosure(now, hours)`; `reopening(closure, hours)`; `OpeningHours`, `OpeningStatus` and `Closure` in `…/opening-status/type` |
+| `…/copyright-years` | `<CopyrightYears since={year} />`                                                                                                                                                                                         |
 
 ## Develop
 
