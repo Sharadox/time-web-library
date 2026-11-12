@@ -1,6 +1,6 @@
 {
   "name": "@sharadox/time-web-library",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Time for local businesses: minutes in a time zone, 24-hour formatting, opening hours, rounding to a step and sunrise and sunset (with a React hook).",
   "private": false,
   "license": "SEE LICENSE IN LICENCA.md",
