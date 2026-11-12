@@ -7,3 +7,5 @@
 - /round-down roundDown(date, stepMinutes, beforeMinutes=0) → Date
 - /sun-time sunTimes(date, lat, lng) → { rise, set }; /sun-today useSunToday(lat, lng) → { rise, set, now, tomorrow } | null ("use client")
 - Peer: react (for the hook). License: Sharadox Open Source License 0.1.0
+- /opening-status openingStatus(now, { days (ISO 1=Mon), periods [{ opens, closes }], timeZone, closures? [{ from, to } dates, inclusive] }) → { open, closure?, change { day, time, inDays, date } }; nextClosure(now, hours) (earliest not ended); reopening(closure, hours) (first open date after)
+- /copyright-years <CopyrightYears since={1996} /> → "1996–<current year>" or "<year>" in the first year; the browser writes the current year after hydration
