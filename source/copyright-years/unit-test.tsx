@@ -24,3 +24,11 @@ test("a page built in an earlier year shows the current one once it runs", () =>
   const { container } = render(<CopyrightYears since={2026} />);
   expect(container.textContent).toBe("2026–2028");
 });
+
+test("building the page reads no clock (prerendering forbids it): the first year, then the browser's own", () => {
+  const clock = vi.spyOn(Date.prototype, "getFullYear");
+  const built = renderToString(<CopyrightYears since={2020} />);
+  expect(clock).not.toHaveBeenCalled();
+  expect(built).toContain(">2020<");
+  clock.mockRestore();
+});
